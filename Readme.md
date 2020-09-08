@@ -1,7 +1,7 @@
 # Личный проект «Седона»
 
 * Студент: [Роман Сорокин](https://up.htmlacademy.ru/htmlcss/29/user/1421741).
-* Наставник: [Дмитрий Аверин] (https://htmlacademy.ru/profile/id1061531).
+* Наставник: [Дмитрий Аверин](https://htmlacademy.ru/profile/id1061531).
 
 ---
 
