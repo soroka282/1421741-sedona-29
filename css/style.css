@@ -35,6 +35,7 @@ body {
     color: var(--basic-black);
     background-color: var(--basic-white);
     text-transform: uppercase;
+    cursor: default;
 
 }
 
@@ -145,6 +146,7 @@ img {
 .main-header-logo {
   min-height: 70px;
   position: absolute;
+  z-index: 10;
   left: 50%;
   bottom: -40%;
   transform: translateX(-50%);
@@ -260,7 +262,9 @@ img {
 
 }
 
-.card-1  p:last-child, .card-2 p:last-child, .card-3 p:last-child {
+.card-1  p:last-child,
+.card-2 p:last-child,
+.card-3 p:last-child {
   margin-top: 25px;
 }
 
@@ -276,7 +280,7 @@ img {
   width: 119px;
   margin-left: 140px;
   margin-top: 47px;
-  margin-bottom: 25px;
+  margin-bottom: 28px;
 }
 
 /* aside */
@@ -356,13 +360,16 @@ img {
     min-height: 256px;
     width: 568px;
     margin: 0 auto;
+    padding-top: 33px;
+    position: relative;
+    z-index: 10;
 }
 
 .offers h2 {
     font-weight: bold;
     font-size: 30px;
     line-height: 24px;
-    margin-top: 55px;
+
 
 }
 .offers-info {
@@ -382,17 +389,18 @@ img {
     background-color: var(--basic-brown);
     width: 568px;
     height: 86px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     border: 1px 1px var(--basic-white);
     outline:none;
     margin-top: -5px;
-}
-.button-offers p {
+    cursor: pointer;
     text-transform: uppercase;
     font-weight: bold;
     font-size: 21px;
     line-height: 26px;
-    margin: 0;
 }
+
 .button-offers:hover {
     background-color: var(--button-brown-hover);
     border: 1px 1px var(--basic-white);
@@ -402,19 +410,13 @@ img {
     background-color: var(--button-brown-focus);
 }
 
-.button-offers p:focus{
-  color: var(--basic-white);
-  opacity: 0.3;
-}
-
 /* map */
 
 .map {
     width: 1200px;
     height: 473px;
-    margin-top: -20px;
+
     position: relative;
-    z-index: -1;
 }
 
 /* filter */
@@ -435,28 +437,33 @@ img {
     line-height: 21px;
     text-align: center;
     text-transform: uppercase;
-    width: 137px;
+    width: 135px;
     height: 36px;
-    border: 1px 1px var(--basic-white);
-    background-color: rgba(168, 153, 153, .1);
+    border: 2px solid #FFFFFF;
+    box-sizing: border-box;
+    border-radius: 2px;
+    background-color: rgba(168, 153, 153, .0);
     color: var(--basic-white);
+    position: absolute;
+    top: 149px;
+    right: 168px;
 }
 
 
 .filter-button:hover {
     background-color: var(--basic-white);
     color: var(--basic-black);
-    background-color: rgba(168, 153, 153, .1);
-    outline: 2px solid var(--basic-white);
-    color: var(--basic-white);
+    border: 2px solid #FFFFFF;
+    box-sizing: border-box;
+    border-radius: 2px;
     border: none;
 }
 
 .filter-form {
   display: flex;
-  outline: 1px solid purple;
   padding-top: 27px;
   padding-left: 72px;
+  position: relative;
 
 }
 
@@ -503,28 +510,185 @@ img {
 
 .filters {
   min-height: 150px;
-  outline: 1px solid red;
 }
 
-.filter-input-infrastructure + label::before {
+.checkbox-infrastructure-off + label::before {
   content: "";
   position: absolute;
   left: 72px;
   width: 23px;
   height: 23px;
-  background-image: url(../img/checkbox-off.svg);
+  background-image: url(../img/checkboxoff.svg);
 }
 
-.filter-input-housing + label::before {
+.checkbox-infrastructure-on + label::before {
+  content: "";
+  position: absolute;
+  left: 72px;
+  width: 27px;
+  height: 23px;
+  background-image: url(../img/checkboxon.svg);
+}
+
+.disabled-chekbox-infrastructure + label::before {
+  content: "";
+  position: absolute;
+  left: 72px;
+  width: 27px;
+  height: 23px;
+  background-image: url(../img/checkboxdisabled.svg);
+
+}
+
+.checkbox-housing-off + label::before {
   content: "";
   position: absolute;
   margin-left: 187px;
   left: 140px;
   width: 23px;
   height: 23px;
-  background-image: url(../img/checkbox-off.svg);
+  background-image: url(../img/checkboxoff.svg);
 }
 
+.checkbox-housing-on + label::before {
+  content: "";
+  position: absolute;
+  margin-left: 187px;
+  left: 140px;
+  width: 27px;
+  height: 23px;
+  background-image: url(../img/checkboxon.svg);
+}
+
+.disabled-chekbox-housing + label::before {
+  content: "";
+  position: absolute;
+  margin-left: 187px;
+  left: 140px;
+  width: 27px;
+  height: 23px;
+  cursor: default;
+  background-image: url(../img/checkboxdisabled.svg);
+}
+
+
+.filter-item-range {
+  border: none;
+  color: var(--basic-white);
+  position: relative;
+  left: 213px;
+}
+
+.filter-item-range legend {
+   font-family: PT Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 15px;
+  line-height: 18px;
+  margin-bottom: 8px;
+}
+
+.price-controls {
+  font-family: PT Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 21px;
+  display: flex;
+  justify-items: center;
+  border: 2px solid #FFFFFF;
+  box-sizing: border-box;
+  border-radius: 2px;
+  text-align: center;
+  height: 36px;
+  width: 317px;
+  position: relative;
+}
+
+.min-price {
+  margin-left: 65px;
+  width: 150px;
+}
+
+.max-price {
+  margin-left: 46px;
+  width: 150px;
+}
+
+.min-price input,
+.max-price input {
+  color: var(--basic-white);
+  background-color: rgba(168, 153, 153, .0);
+  border: inherit;
+  height: 30px;
+  width: 70px;
+}
+
+.min-price input:hover,
+.max-price input:hover,
+.min-price:hover,
+.max-price:hover   {
+  cursor: pointer;
+}
+
+.price-controls::before {
+  content: '';
+  left: 50%;
+  border: 1px solid #FFFFFF;
+  box-sizing: border-box;
+  border-radius: 2px;
+  width: 2px;
+  height: 22px;
+  position: absolute;
+  top: 5px;
+  left: 160px;
+}
+
+.range-controls {
+  position: relative;
+}
+
+.bar {
+  border: 2px solid #FFFFFF;
+  box-sizing: border-box;
+  border-radius: 2px;
+  position: absolute;
+  width: 316px;
+  height: 2px;
+  opacity: 0.3;
+  top: -3px;
+}
+
+.scale {
+  border: 2px solid var(--basic-white);
+  box-sizing: border-box;
+  border-radius: 2px;
+  height: 2px;
+  width: 260px;
+  margin-top: 20px;
+  position: relative;
+  top: -3px;
+}
+
+.toggle {
+  width: 4px;
+  height: 4px;
+  padding: 0;
+  border: 8px solid #ffffff;
+  background-color: #ababab;
+  border-radius: 50%;
+  box-shadow: 0 2px 1px 0 #cfcfcf;
+  position: absolute;
+  bottom: -5px;
+}
+
+.toggle:hover {
+  transform: scale(1.1);
+}
+
+.toggle-max {
+  left: 255px;
+}
 /*content-box*/
 
 .content-box {
@@ -584,7 +748,8 @@ img {
     color: var(--basic-blue);
 }
 
-.sort-item-type,.sort-item-rating {
+.sort-item-type,
+.sort-item-rating {
     color: var(--basic-black);
     opacity: 0.3;
     border-bottom: 1px dashed var(--basic-blue);
@@ -606,10 +771,35 @@ img {
 .sort-point {
   position: absolute;
   right: 74px;
+  cursor: pointer;
+}
+
+.sort-point-active {
+  fill: var(--basic-blue);
+}
+
+.sort-point-not-active {
+  fill: var(--arrows);
+  cursor: default;
+}
+
+.sort-point-not-active:hover {
+  fill: var(--arrows);
+}
+.sort-point-not-active:active {
+  fill: var(--arrows);
 }
 
 .sort-point svg:last-child {
   margin-left: 5px;
+}
+
+.sort-point-active svg:hover {
+  fill: var(--basic-black);
+}
+
+.sort-point-active svg:focus {
+  fill: var(--basic-blue);
 }
 
 /* hotels */
@@ -694,7 +884,6 @@ img {
   padding-top: 3px;
   padding-bottom: 2px;
   color: var(--basic-white);
-  outline: 1px solid red;
 }
 
 .hotels-info p:first-child {
@@ -852,6 +1041,24 @@ img {
     align-items: center;
 }
 
+.social-button svg {
+  fill: var(--basic-white);
+}
+
+.social-button:hover {
+  background-color: var(--button-blue-hover);
+}
+
+.social-button:focus {
+  background-color: var(--button-blue-focus);
+}
+
+.social-button svg:focus {
+  fill: rgba(255, 255, 255, .3);
+}
+
+
+
 /* footer-copyright */
 
 .footer-copyright {
@@ -871,11 +1078,15 @@ img {
   margin-left: 5px;
 }
 
-.footer-copyright :hover {
+.footer-copyright svg {
+  fill: var(--basic-black);
+}
+
+.footer-copyright svg:hover {
   fill: var(--basic-blue);
 }
 
-.footer-copyright :focus {
+.footer-copyright svg:focus {
   fill: var(--focus-logo-html-academy);
 }
 
@@ -883,6 +1094,7 @@ img {
 
 .modal {
   position: absolute;
+  z-index: 10;
   width: 568px;
   height: 395px;
   font-family: PT Sans;
@@ -900,6 +1112,23 @@ img {
   flex-wrap: wrap;
   justify-content: flex-start;
   align-items: center;
+  padding-top: 55px;
+  padding-left: 55px;
+}
+
+.modal-list label {
+  position: relative;
+  min-width: 95px;
+  min-height: 26px;
+  text-align: left;
+  margin-bottom: 28px;
+  cursor: pointer;
+}
+
+.area-child {
+  padding-left: 25px;
+  margin-left: 25px;
+  margin-right: -48px;
 }
 
 .area {
@@ -911,10 +1140,20 @@ img {
   text-transform: uppercase;
   background-color: var(--area);
   border: hidden;
-  width: 346px;
+  width: 333px;
   height: 38px;
+  margin-bottom: 25px;
+  padding-left: 10px;
+  margin-left: 20px;
+  cursor: pointer;
 }
 
+.quantity {
+  width: 63px;
+  height: 38px;
+  padding-left: 50px;
+  margin-top: 5px;
+}
 
 .area:hover {
   background-color: var(--area-focus);
@@ -926,6 +1165,52 @@ img {
   outline:none;
 }
 
+.area-wrap {
+  position: relative;
+}
+
+.area-wrap svg {
+  position: absolute;
+  cursor: pointer;
+  fill: var(--offers-input);
+}
+
+.calendar-ico-departure,
+.calendar-ico-arrival {
+  top: 8px;
+  right: 10px;
+}
+
+.minus-ico-adults,
+.minus-ico-child {
+  top: 22px;
+  right: 93px;
+}
+
+.plus-ico-adults,
+.plus-ico-child {
+  top: 18px;
+  right: 18px;
+}
+
+.calendar-ico-departure:hover,
+.calendar-ico-arrival:hover,
+.minus-ico-adults:hover,
+.minus-ico-child:hover,
+.plus-ico-adults:hover,
+.plus-ico-child:hover {
+  fill: var(--basic-black);
+}
+
+.calendar-ico-departure:focus,
+.calendar-ico-arrival:focus,
+.minus-ico-adults:focus,
+.minus-ico-child:focus,
+.plus-ico-adults:focus,
+.plus-ico-child:focus {
+  fill: var(--basic-blue);
+}
+
 .offers-button-search {
   width: 458px;
   padding-top: 15px;
@@ -933,17 +1218,15 @@ img {
   background-color: var(--basic-blue);
   border: 1px 1px var(--basic-white);
   outline:none;
-}
-
-.offers-button-search p {
-font-style: normal;
+  font-style: normal;
   font-weight: bold;
   font-size: 21px;
   line-height: 26px;
   text-align: center;
-  margin: 0;
+  margin-top: 27px;
   text-transform: uppercase;
   color: var(--basic-white);
+  cursor: pointer;
 }
 
 .offers-button-search:hover {
@@ -959,3 +1242,4 @@ font-style: normal;
   color: var(--basic-white);
   opacity: 0.3;
 }
+
