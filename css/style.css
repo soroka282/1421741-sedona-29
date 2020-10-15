@@ -284,6 +284,10 @@ img {
     margin-bottom: 28px;
 }
 
+.card-3 p:last-child {
+  margin-top: 22px;
+}
+
 /* aside */
 
 .aside-list {
@@ -382,7 +386,7 @@ img {
     font-weight: normal;
     font-size: 14px;
     line-height: 24px;
-    margin-top: 33px;
+    margin-top: 30px;
 }
 
 .button-offers {
@@ -506,7 +510,7 @@ img {
     margin-top: 50px;
 }
 
-.checkbox-infrastructure-off + label::before {
+.checkbox-infrastructure + label::before {
     content: "";
     position: absolute;
     left: 72px;
@@ -515,14 +519,14 @@ img {
     background-image: url(../img/checkboxoff.svg);
 }
 
-.checkbox-infrastructure-off:focus + label::before,
-.checkbox-infrastructure-on:focus + label::before,
-.checkbox-housing-off:focus + label::before,
-.checkbox-housing-on:focus + label::before {
+.checkbox-infrastructure:focus + label::before,
+.checkbox-infrastructure:focus + label::before,
+.checkbox-housing:focus + label::before,
+.checkbox-housing:focus + label::before {
     transform: scale(1.1);
 }
 
-.checkbox-infrastructure-on + label::before {
+.checkbox-infrastructure:checked + label::before {
     content: "";
     position: absolute;
     left: 72px;
@@ -531,7 +535,7 @@ img {
     background-image: url(../img/checkboxon.svg);
 }
 
-.disabled-chekbox-infrastructure + label::before {
+.chekbox-infrastructure:disabled + label::before {
     content: "";
     position: absolute;
     left: 72px;
@@ -541,7 +545,7 @@ img {
 
 }
 
-.checkbox-housing-off + label::before {
+.checkbox-housing + label::before {
     content: "";
     position: absolute;
     margin-left: 187px;
@@ -551,7 +555,7 @@ img {
     background-image: url(../img/checkboxoff.svg);
 }
 
-.checkbox-housing-on + label::before {
+.checkbox-housing:checked + label::before {
     content: "";
     position: absolute;
     margin-left: 187px;
@@ -561,7 +565,7 @@ img {
     background-image: url(../img/checkboxon.svg);
 }
 
-.disabled-chekbox-housing + label::before {
+.chekbox-housing:disabled + label::before {
     content: "";
     position: absolute;
     margin-left: 187px;
@@ -874,7 +878,7 @@ img {
 }
 
 .hotels-card {
-    padding-top: 23.5px;
+    padding-top: 23px;
     min-height: 100px;
     margin-left: -45px;
 }
@@ -983,7 +987,6 @@ img {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-
 }
 
 .stars-svg {
@@ -1028,7 +1031,6 @@ img {
     margin-bottom: 9px;
     width: 166px;
     margin-top: -5px;
-
 }
 
 .footer-phone {
@@ -1072,6 +1074,7 @@ img {
     display: flex;
     justify-content: center;
     align-items: center;
+    outline: none;
 }
 
 .social-button svg {
@@ -1090,8 +1093,6 @@ img {
 .social-button:focus {
     background-color: var(--button-blue-focus);
 }
-
-
 
 /* footer-copyright */
 
@@ -1147,7 +1148,7 @@ img {
     flex-wrap: wrap;
     justify-content: flex-start;
     align-items: center;
-    padding-top: 55px;
+    padding-top: 53px;
     padding-left: 55px;
 }
 
@@ -1158,12 +1159,6 @@ img {
     text-align: left;
     margin-bottom: 28px;
     cursor: pointer;
-}
-
-.area-child {
-    padding-left: 25px;
-    margin-left: 25px;
-    margin-right: -48px;
 }
 
 .area {
@@ -1179,71 +1174,134 @@ img {
     height: 38px;
     margin-bottom: 25px;
     padding-left: 10px;
-    margin-left: 20px;
+    margin-left: 15px;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    border: 2px solid var(--basic-white);
+}
+
+.area-arrival input,
+.area-departure input {
+    padding-left: -40px;
+}
+
+.area-departure {
+    margin-top: -5px;
+}
+
+.area-child {
+    margin-right: -50px;
+    margin-left: 85px;
 }
 
 .quantity {
-    width: 63px;
+    width: 28px;
     height: 38px;
-    padding-left: 50px;
-    margin-top: 5px;
+    margin-top: -5px;
+    margin-left: 50px;
+    padding-right: 10px;
+    text-align: center;
 }
 
 .area:hover {
     background-color: var(--area-focus);
+    border: 2px solid var(--basic-white);
 }
 
 .area:focus {
     border: 2px solid var(--area-focus);
     background-color: var(--basic-white);
     outline:none;
+    border: 2px solid #E5E5E5;
 }
 
 .area-wrap {
     position: relative;
 }
 
-.area-wrap svg {
+.area-wrap button {
     position: absolute;
+    height: 39px;
+    width: 38px;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    background-color: var(--area);
+}
+
+.area-wrap svg {
     cursor: pointer;
     fill: var(--offers-input);
 }
 
 .calendar-ico-departure,
 .calendar-ico-arrival {
-    top: 8px;
-    right: 10px;
+    top: 2px;
+    right: 0px;
 }
 
 .minus-ico-adults,
 .minus-ico-child {
-    top: 22px;
-    right: 93px;
+    top: -3px;
+    right: 50px;
+    width: 38px;
 }
 
 .plus-ico-adults,
 .plus-ico-child {
-    top: 18px;
-    right: 18px;
+    top: -3px;
+    right: -30px;
+    width: 38px;
 }
 
-.calendar-ico-departure:hover,
-.calendar-ico-arrival:hover,
-.minus-ico-adults:hover,
-.minus-ico-child:hover,
-.plus-ico-adults:hover,
-.plus-ico-child:hover {
+.plus-ico-adults svg,
+.plus-ico-child svg {
+    position: absolute;
+    top: 16px;
+    right: 13px;
+}
+
+.minus-ico-adults svg,
+.minus-ico-child svg {
+    position: absolute;
+    top: 20px;
+    right: 10px;
+}
+
+.area-wrap svg {
+    outline: none;
+    border: none;
+}
+
+.calendar-ico-departure:hover svg,
+.calendar-ico-arrival:hover svg,
+.minus-ico-adults:hover svg,
+.minus-ico-child:hover svg,
+.plus-ico-adults:hover svg,
+.plus-ico-child:hover svg {
     fill: var(--basic-black);
+    background-color: var(--area-focus);
 }
 
-.calendar-ico-departure:active,
-.calendar-ico-arrival:active,
-.minus-ico-adults:active,
-.minus-ico-child:active,
-.plus-ico-adults:active,
-.plus-ico-child:active {
+.calendar-ico-departure:active svg,
+.calendar-ico-arrival:active svg,
+.minus-ico-adults:active svg,
+.minus-ico-child:active svg,
+.plus-ico-adults:active svg,
+.plus-ico-child:active svg {
     fill: var(--basic-blue);
+    background-color: var(--area-focus);
+}
+
+.calendar-ico-departure:focus svg,
+.calendar-ico-arrival:focus svg,
+.minus-ico-adults:focus svg,
+.minus-ico-child:focus svg,
+.plus-ico-adults:focus svg,
+.plus-ico-child:focus svg {
+  fill: var(--basic-blue);
+  background-color: var(--area-focus);
 }
 
 .offers-button-search {
